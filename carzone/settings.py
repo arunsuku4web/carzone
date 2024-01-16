@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'c5l!cgtvgzti)9ux8($95dhf3%$seeh83y2ytp#^((#^hem9&#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -95,18 +95,19 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'carzone_db',
-#         'USER' :'postgres',
-#         'PASSWORD':'aim2high',
-#         'HOST':'localhost',
-#         'PORT': '5433'
-#     }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carzone_db',
+        'USER' :'postgres',
+        'PASSWORD':'aim2high',
+        'HOST':'localhost',
+        'PORT': '5433'
+    }
 
-# }
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:aim2high@mysterious-springs-59097/carzone_db')}
+ }
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgres://postgres:aim2high@localhost/carzone_db')}
 
 
 # Password validation
