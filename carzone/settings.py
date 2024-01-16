@@ -27,10 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SOCIALACCOUNT_LOGIN_ON_GET=True
+
+LOGIN_REDIRECT_URL= 'dashboard'
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'contacts.apps.ContactsConfig',
+    'accounts.apps.AccountsConfig',
     'cars.apps.CarsConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
@@ -42,6 +48,15 @@ INSTALLED_APPS = [
     'ckeditor',
     'multiselectfield',
     'django.contrib.humanize',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    #providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -138,3 +153,20 @@ STATICFILES_DIRS = [
 #Media Settings
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+
+}
+
+SITE_ID=1
+
+#Email Sending
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT= 587
+EMAIL_HOST_USER='arunsuku4u@gmail.com'
+EMAIL_HOST_PASSWORD='ICANWIN$007'
+EMAIL_USE_TLS=True
