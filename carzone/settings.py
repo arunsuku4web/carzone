@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 #     }
 
 # }
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:aim2high@localhost/carzone_db')}
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:aim2high@mysterious-springs-59097/carzone_db')}
 
 
 # Password validation
