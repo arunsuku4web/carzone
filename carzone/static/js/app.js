@@ -108,19 +108,19 @@ $(function () {
                     $('.sticky-header').addClass('header-shrink');
                 }
                 if($('.do-sticky').length < 1) {
-                    $('.company-logo img').attr('src', 'http://127.0.0.1:8000/static/img/logos/black-logo.png');
+                    $('.company-logo img').attr('src', 'https://mysterious-springs-59097-9a3142a9f3ca.herokuapp.com/static/img/logos/black-logo.png');
                 }
             }
             else {
                 $('.sticky-header').removeClass('header-shrink');
                 if($('.do-sticky').length < 1 && $('.fixed-header').length == 0 && $('.fixed-header2').length == 0) {
-                    $('.company-logo img').attr('src', 'http://127.0.0.1:8000/static/img/logos/logo.png');
+                    $('.company-logo img').attr('src', 'https://mysterious-springs-59097-9a3142a9f3ca.herokuapp.com/static/img/logos/logo.png');
                 } else {
-                    $('.company-logo img').attr('src', 'http://127.0.0.1:8000/static/img/logos/black-logo.png');
+                    $('.company-logo img').attr('src', 'https://mysterious-springs-59097-9a3142a9f3ca.herokuapp.com/static/img/logos/black-logo.png');
                 }
             }
         } else {
-            $('.company-logo img').attr('src', 'http://127.0.0.1:8000/static/img/logos/black-logo.png');
+            $('.company-logo img').attr('src', 'https://mysterious-springs-59097-9a3142a9f3ca.herokuapp.com/static/img/logos/black-logo.png');
         }
     }
 
