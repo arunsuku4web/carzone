@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -57,6 +58,7 @@ INSTALLED_APPS = [
     #providers
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    'django_heroku',
 
 ]
 
@@ -106,8 +108,16 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 #     }
 
 #  }
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://postgres:aim2high@mysterious-springs-59097/carzone_db')}
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+
+# Database configuration.
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgres://postgres:aim2high@mysterious-springs-59097/carzone_db')
+#     }
 
 
 # Password validation
