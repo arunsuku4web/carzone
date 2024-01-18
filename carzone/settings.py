@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # DATABASE_URL=postgres://username:password@your-postgres-host:5432/your-database-name
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://postgres:aim2high@mysterious-springs-59097:5432/carzone_db',
+        default='postgres://ayiuodqahqzret:ce66e50a7d8ac226e42cf75d700bcbecd78374aa3446196f8ed793604c8fd2a3@ec2-54-234-13-16.compute-1.amazonaws.com:5432/d9422h8lsoasqu',
         conn_max_age=600,  # Use a persistent connection
         ssl_require=True,
     )
