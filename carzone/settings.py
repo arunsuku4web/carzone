@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+#Database Local
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -109,14 +109,27 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 
 #  }
 
-# DATABASE_URL=postgres://username:password@your-postgres-host:5432/your-database-name
+#Database Server
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://ayiuodqahqzret:ce66e50a7d8ac226e42cf75d700bcbecd78374aa3446196f8ed793604c8fd2a3@ec2-54-234-13-16.compute-1.amazonaws.com:5432/d9422h8lsoasqu',
-        conn_max_age=600,  # Use a persistent connection
-        ssl_require=True,
-    )
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd9422h8lsoasqu',
+        'USER' :'ayiuodqahqzret',
+        'PASSWORD':'ce66e50a7d8ac226e42cf75d700bcbecd78374aa3446196f8ed793604c8fd2a3',
+        'HOST':'ec2-54-234-13-16.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+
+ }
+
+# DATABASE_URL=postgres://username:password@your-postgres-host:5432/your-database-name
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgres://ayiuodqahqzret:ce66e50a7d8ac226e42cf75d700bcbecd78374aa3446196f8ed793604c8fd2a3@ec2-54-234-13-16.compute-1.amazonaws.com:5432/d9422h8lsoasqu',
+#         conn_max_age=600,  # Use a persistent connection
+#         ssl_require=True,
+#     )
+# }
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
