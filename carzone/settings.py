@@ -109,11 +109,20 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 
 #  }
 
+# DATABASE_URL=postgres://username:password@your-postgres-host:5432/your-database-name
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgres://postgres:aim2high@mysterious-springs-59097:5432/carzone_db',
+        conn_max_age=600,  # Use a persistent connection
+        ssl_require=True,
+    )
+}
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
 # Database configuration.
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # DATABASES = {
 #     'default': dj_database_url.config(default='postgres://postgres:aim2high@mysterious-springs-59097/carzone_db')
